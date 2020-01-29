@@ -1,6 +1,9 @@
 pipeline {
    agent any
-
+    environment {
+      AZURE_STORAGE_ACCOUNT     = credentials('jenkins-azure-blob-account-id')
+      AZURE_STORAGE_KEY = credentials('jenkins-azure-blob-account-key')
+  }
    stages {
 
       stage('Checkout') {
