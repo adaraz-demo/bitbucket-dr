@@ -5,9 +5,6 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-export AZURE_STORAGE_ACCOUNT=bitbucketdrstorage
-export AZURE_STORAGE_KEY=lyzJSosJIv1JRVNtDmbINdmcedy9XW8KJZ+b8sbFptZ9VMOgp7xHVVPOd18ani1R639NYkjGMCSSRvH0Z8TeZg==
-
 for repo in "$@"
 do
     echo "Cloning git repository $repo"
