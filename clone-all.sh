@@ -13,12 +13,11 @@ do
 
     cd ./"$repo"
 
-    git pull --all
-
     for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
         git branch --track "${branch##*/}" "$branch"
     done
 
+    git pull --all
 
     echo "Creating the remote repository on blob storage..."
     az storage container create --name "$repo"
